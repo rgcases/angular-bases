@@ -6,5 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'bases';
+  public title: string = 'Hola Mundo';
+
+// Esta lógica debe ir dentro de cada componente. En este caso dentro de counter.component.ts :
+/*
+  public counter:number = 10;
+
+
+  increaseBy( value:number): void {
+
+    this.counter += value;
+
+}
+
+resetCounter ():void {
+  this.counter = 10;
+
+}
+*/
 }

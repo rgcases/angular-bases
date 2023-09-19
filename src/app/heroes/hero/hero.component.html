@@ -1,0 +1,39 @@
+<h1>{{name}}</h1>
+
+<dl>
+    <td>Nombre:</td>
+    <dd>{{name}}</dd>
+
+    <td>Edad:</td>
+    <dd>{{age}}</dd>
+
+    <td>Método:</td>
+    <dd>{{ getHeroDescription() }}</dd>
+
+    <td>Capitalizado:</td>
+    <dd>{{capitalizedName}}</dd>
+
+</dl>
+
+
+<!--usamos el ngIf (aparece en la hoja de atajos). Si le pongo valor false o cualquier valor negativo, el botón desaparecerá. En este caso, si el botón es diferente de Spiderman, aparecerá pero si es igual desaparecerá-->
+<button
+*ngIf="name !== 'Spiderman'"
+(click) = "changeHero()"
+class="btn btn-primary mx-2">
+    Cambiar Nombre
+</button>
+
+<button
+*ngIf="age !== 26"
+(click) = "changeAge()"
+class="btn btn-primary mx-2">
+  Cambiar Edad
+</button>
+
+<button
+
+(click) = "resetForm()"
+class="btn btn-primary mx-2">
+  Reset
+</button>

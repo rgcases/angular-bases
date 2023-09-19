@@ -1,0 +1,39 @@
+<h3>Listado de Héroes</h3>
+
+<!--Si se cumple me muestra esto y si no se cumple nos muestra el otro h3.El ngIf puedo ponerlo en el h3 pero en este ejemplo lo ponen en el div para que se vea más claro-->
+<div *ngIf="deletedHero; else nothingWasDeleted">
+<h3>Héroe borrado: <small class="text-danger">{{deletedHero}} </small></h3>
+</div>
+
+<!--este ng-template es una especie de div pero que no se vé. tengo que ponerle una almohadilla para relacionarlo con el ngIF-->
+<ng-template #nothingWasDeleted>
+<h3>No ha borrado nada</h3>
+</ng-template>
+
+
+
+<!--Si ya he borrado todos puedo quitar este boton-->
+<button
+*ngIf="heroNames.length>0"
+(click)="removeLastHero()"
+class="btn btn-outline-danger">
+  Borrar último héroe
+</button>
+
+
+
+
+
+<!--clase de boostrap-->
+<ul class = "mt-2 list-group">
+
+<!--se puede hacer SIN ANGULAR
+  <li  class="list-group-item">Spiderman</li>
+  <li  class="list-group-item">Ironman</li>
+  <li  class="list-group-item">Hulk</li>
+-->
+
+<!--se puede hacer CON ANGULAR-->
+  <li *ngFor="let name of heroNames" class="list-group-item">{{name}}</li>
+
+</ul>
