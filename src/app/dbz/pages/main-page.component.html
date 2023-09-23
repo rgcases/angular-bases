@@ -1,0 +1,22 @@
+<h1>DBZ Characters</h1>
+<hr>
+
+<div class="row">
+
+    <div class="col">
+      <!--gracias a @Input() puedo meter el characterList-->
+      <!--gracias a @Output() puedo traer el evento que emite un indice y pasarlo al metodo del main-->
+      <dbz-list
+       [characterList]="characters"
+       (onDelete)="onDeleteCharacter($event)"
+       >
+      </dbz-list>
+
+
+    </div>
+    <div class="col">
+    <!--gracias a @Ouput() puedo traer el evento. El evento que sale del add-character (onNewCharacter), se exporta al main page a través del método "onNewCharacter" para el evento que viaja, en este caso había definido que sería un character-->
+        <dbz-add-character (onNewCharacter)="onNewCharacter($event)"></dbz-add-character>
+
+    </div>
+</div>

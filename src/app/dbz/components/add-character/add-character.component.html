@@ -1,0 +1,34 @@
+
+
+<!--NOTA: []para llamar a alguna función o atributo // () para algún evento-->
+
+<!--NOTA: para utilizar el ngModel necesito importar el modulo FormModule. Con ngModel, lo que meto en la web en la casilla input me va directamente al atributo del personaje-->
+
+<!--ngSubmit : evento especial de Angular-->
+
+    <h4>Agregar personaje</h4>
+
+        <form class="row" (ngSubmit)="emitCharacter()">
+            <input type="text"
+            [(ngModel)]="character.name"
+            name="name"
+            class="form-control mb-2"
+            placeholder="Nombre">
+
+            <input type="number"
+            [(ngModel)]="character.power"
+            name="power"
+            class="form-control mb-2"
+            placeholder="Poder">
+
+            <button type="submit" class="btn btn-primary">
+                Agregar
+            </button>
+
+
+              <!--Hacemos un pipe json para ver el objeto en la web-->
+           <!--
+              <pre>{{character | json}}</pre>
+           -->
+
+        </form>
